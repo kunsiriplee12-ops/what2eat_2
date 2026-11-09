@@ -70,7 +70,9 @@ export default function App() {
 
   useEffect(() => {
     const controller = new AbortController();
-    fetch("/api/categories", { signal: controller.signal })
+    fetch("https://what2eat-backend-ret4.onrender.com/api/categories", {
+      signal: controller.signal,
+    })
       .then(async (response) => {
         if (!response.ok) throw new Error("Unable to load categories");
         return response.json();
@@ -96,7 +98,7 @@ export default function App() {
     if (!selectedCategory) return undefined;
     const controller = new AbortController();
     setCatalogStatus("loading");
-    fetch(`/api/meals/${encodeURIComponent(selectedCategory)}`, {
+    fetch(`https://what2eat-backend-ret4.onrender.com/api/meals/${encodeURIComponent(selectedCategory)}`, {
       signal: controller.signal,
     })
       .then(async (response) => {

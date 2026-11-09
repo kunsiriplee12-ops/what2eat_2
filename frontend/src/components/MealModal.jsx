@@ -42,7 +42,7 @@ export default function MealModal({ mealId, onClose }) {
     setMeal(null);
     setStatus("loading");
 
-    fetch(`/api/detail/${encodeURIComponent(mealId)}`, {
+    fetch(`https://what2eat-backend-ret4.onrender.com/api/detail/${encodeURIComponent(mealId)}`, {
       signal: controller.signal,
     })
       .then(async (response) => {
