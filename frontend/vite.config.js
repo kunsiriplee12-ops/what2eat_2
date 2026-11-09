@@ -6,13 +6,14 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      "/api": "http://localhost:3000",
+      "/api": "https://what2eat-backend-ret4.onrender.com"
+
     },
   },
   preview: {
     port: 4173,
     proxy: {
-      "/api": "http://localhost:3000",
+      "/api": "https://what2eat-backend-ret4.onrender.com"
     },
   },
 });
